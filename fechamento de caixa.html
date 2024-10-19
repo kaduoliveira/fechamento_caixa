@@ -68,8 +68,9 @@
 </head>
 <body style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
     <h2>RESUMO DIÁRIO DO CAIXA</h2>
-    <h4>RESUMO DE VENDAS  -   <input type="date" name="data" id="data" tabindex="1"></h4>
-    <form action="" style="border: 2px solid black; padding: 10px; font-size: large;">
+   
+    <form method="post" action="" style="border: 2px solid black; padding: 10px; font-size: large;">
+        <h4>RESUMO DE VENDAS  -   <input type="date" name="data" id="data" tabindex="1"></h4>
         <table>
             <tr style="background-color: lightgray;">
                 <th class="coluna1">Caixa n.º</th>
@@ -83,9 +84,9 @@
                 <td class="coluna1" style="background-color: lightgray;">DINHEIRO</td>
                 <td><input name="dinheiro1" type="number" tabindex="3"></td>
                 <td><input name="dinheiro2" type="number"></td>
-                <td><input name="dinheiro3" type="number" ></td>
+                <td><input name="dinheiro3" type="number"></td>
                 <td><input name="dinheiro4" type="number"></td>
-                <td><input name="dinheiro5" type="text" readonly></td>
+                <td><input name="dinheiro_total" type="text" readonly></td>
             </tr>
             <tr>
                 <td class="coluna1" style="background-color: lightgray;">CARTÃO CRED</td>
@@ -93,7 +94,7 @@
                 <td><input type="number" name="cartao_cred2"></td>
                 <td><input type="number" name="cartao_cred3"></td>
                 <td><input type="number" name="cartao_cred4"></td>
-                <td><input type="text"  name="cartao_cred5" readonly></td>
+                <td><input type="text"  name="cartao_cred_total" readonly></td>
             </tr>
             <tr>
                 <td class="coluna1" style="background-color: lightgray;">CARTÃO DEB</td>
@@ -101,7 +102,7 @@
                 <td><input type="number" name="cartao_deb2"></td>
                 <td><input type="number" name="cartao_deb3"></td>
                 <td><input type="number" name="cartao_deb4"></td>
-                <td><input type="text"  name="cartao_deb5" readonly></td>
+                <td><input type="text"  name="cartao_deb_total" readonly></td>
             </tr>
             <tr>
                 <td class="coluna1" style="background-color: lightgray;">PIX</td>
@@ -109,7 +110,7 @@
                 <td><input type="number" name="pix2"></td>
                 <td><input type="number" name="pix3"></td>
                 <td><input type="number" name="pix4"></td>
-                <td><input type="text" name="pix5" readonly></td>
+                <td><input type="text" name="pix_total" readonly></td>
             </tr>
             <tr>
                 <td class="coluna1" style="background-color: lightgray;">CHEQUE</td>
@@ -117,7 +118,7 @@
                 <td><input type="number" name="cheque2"></td>
                 <td><input type="number" name="cheque3"></td>
                 <td><input type="number" name="cheque4"></td>
-                <td><input type="text" name="cheque5" readonly></td>
+                <td><input type="text" name="cheque_total" readonly></td>
             </tr>
             <tr>
                 <td class="coluna1" style="background-color: lightgray;">TOTAL</td>
@@ -125,7 +126,7 @@
                 <td><input type="number" style="background-color: lightgray; font-weight: bolder;" name="total2"readonly></td>
                 <td><input type="number" style="background-color: lightgray; font-weight: bolder;" name="total3"readonly></td>
                 <td><input type="number" style="background-color: lightgray; font-weight: bolder;" name="total4" readonly></td>
-                <td><input type="text"  style="background-color: lightgray; font-weight: bolder;" name="total5" readonly></td>
+                <td><input type="text"  style="background-color: lightgray; font-weight: bolder;" name="total_total" readonly></td>
             </tr>
         </table>
     <hr>
@@ -136,7 +137,7 @@
                 <td><input type="number" name="malote2"></td>
                 <td><input type="number" name="malote3"></td>
                 <td><input type="number" name="malote4"></td>
-                <td><input type="text" readonly name="malote5"></td>
+                <td><input type="text" readonly name="malote_total"></td>
             </tr>
             <tr class="despesa">
                 <td style="font-weight: bolder;">Despesa</td>
@@ -144,7 +145,7 @@
                 <td><input type="number" name="despesa2"></td>
                 <td><input type="number" name="despesa3"></td>
                 <td><input type="number" name="despesa4"></td>
-                <td><input type="text" name="despesa5" readonly></td>
+                <td><input type="text" name="despesa_total" readonly></td>
             </tr>
             <tr>
                 <td style="font-weight: bolder;">Resultado</td>
@@ -152,7 +153,7 @@
                 <td><input type="text" name="resultado1" readonly></td>
                 <td><input type="text" name="resultado3" readonly></td>
                 <td><input type="text" name="resultado4" readonly></td>
-                <td><input type="text" name="resultado5" readonly></td>
+                <td><input type="text" name="resultado_total" readonly></td>
             </tr>
             <tr>
                 <td style="font-weight: bolder;"  class="coluna1">Quantidade de Vendas</td>
