@@ -1,16 +1,14 @@
-from flask_sqlalchemy import SQLAlchemy
+from app import db
 from datetime import datetime
-
-db = SQLAlchemy()
 
 class FechamentoCaixa(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     data = db.Column(db.Date, nullable=False)
     
-    caixa1 = db.Column(db.String(50))
-    caixa2 = db.Column(db.String(50))
-    caixa3 = db.Column(db.String(50))
-    caixa4 = db.Column(db.String(50))
+    caixa1 = db.Column(db.String(10))
+    caixa2 = db.Column(db.String(10))
+    caixa3 = db.Column(db.String(10))
+    caixa4 = db.Column(db.String(10))
     
     dinheiro1 = db.Column(db.Numeric(10, 2), default=0.0)
     dinheiro2 = db.Column(db.Numeric(10, 2), default=0.0)
@@ -60,12 +58,16 @@ class FechamentoCaixa(db.Model):
     despesa4 = db.Column(db.Numeric(10, 2), default=0.0)
     despesa_total = db.Column(db.Numeric(10, 2), default=0.0)
 
+    serviço1 = db.Column(db.Numeric(10, 2), default=0.0)
+    serviço2 = db.Column(db.Numeric(10, 2), default=0.0)
+    serviço3 = db.Column(db.Numeric(10, 2), default=0.0)
+    serviço4 = db.Column(db.Numeric(10, 2), default=0.0)
+    serviço5 = db.Column(db.Numeric(10, 2), default=0.0)
+
+    qtd_vendas = db.Column(db.Integer, default=0)
+    tkt_medio = db.Column(db.Numeric(10, 2), default=0.0)
+
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
         return f'<FechamentoCaixa {self.data}>'
-
-def init_db(app):
-    db.init_app(app)
-    with app.app_context():
-        db.create_all()
