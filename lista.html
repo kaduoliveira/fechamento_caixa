@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Caixas</title>
+</head>
+<body>
+    <h1>LISTAGEM DE CAIXAS / DIA</h1>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Data</th>
+                <th>Total Vendas</th>
+                <th>Total Despesas</th>
+                <th>Resultado</th>
+                <th>Quant Vendas</th>
+                <th>Tkt Médio</th>
+                <th>Total Serviços</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for fechamento in fechamentos %}
+                <tr>
+                    <td>{{ id }}</td>
+                    <td>{{ data }}</td>
+                    <td>{{ total_total }}</td>
+                    <td>{{ despesa_total }}</td>
+                    <td>{{ resultado_total }}</td>
+                    <td>{{ quant_vendas }}</td>
+                    <td>{{ tkt_medio }}</td>
+                    <td>{{ serviços_total }}</td>
+                    <td><a href="{{ url_for('editar', id=fechamento.id )}}">Editar</a></td>
+                    <td><a href="{{ url_for('deletar', id=fechamento.id )}}">DELETAR</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

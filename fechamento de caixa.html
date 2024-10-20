@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Fechamento de Caixa</title>
+    
    <!-- <style>
         body {
             font-family: Arial, sans-serif;
@@ -68,8 +69,39 @@
 </head>
 <body style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
     <h2>RESUMO DIÁRIO DO CAIXA</h2>
-   
-    <form method="post" action="" style="border: 2px solid black; padding: 10px; font-size: large;">
+    <script>
+        function atualizarDinheiroTotal() {
+            var dinheiro1 = parseFloat(document.querySelector('input[name="dinheiro1"]').value) || 0;
+            var dinheiro2 = parseFloat(document.querySelector('input[name="dinheiro2"]').value) || 0;
+            var dinheiro3 = parseFloat(document.querySelector('input[name="dinheiro3"]').value) || 0;
+            var dinheiro4 = parseFloat(document.querySelector('input[name="dinheiro4"]').value) || 0;
+    
+            var total = dinheiro1 + dinheiro2 + dinheiro3 + dinheiro4;
+            document.querySelector('input[name="dinheiro_total"]').value = total.toFixed(2);
+        }
+
+        function atualizarCartaoCreditoTotal() {
+            var cartao1 = parseFloat(document.querySelector('input[name="cartao_cred1"]').value) || 0;
+            var cartao2 = parseFloat(document.querySelector('input[name="cartao_cred2"]').value) || 0;
+            var cartao3 = parseFloat(document.querySelector('input[name="cartao_cred3"]').value) || 0;
+            var cartao4 = parseFloat(document.querySelector('input[name="cartao_cred4"]').value) || 0;
+
+            var total = cartao1 + cartao2 + cartao3 + cartao4;
+            document.querySelector('input[name="cartao_cred_total"]').value = total.toFixed(2);
+        }
+
+        function atualizarCartaoDebitoTotal() {
+            var cartao1 = parseFloat(document.querySelector('input[name="cartao_deb1"]').value) || 0;
+            var cartao2 = parseFloat(document.querySelector('input[name="cartao_deb2"]').value) || 0;
+            var cartao3 = parseFloat(document.querySelector('input[name="cartao_deb3"]').value) || 0;
+            var cartao4 = parseFloat(document.querySelector('input[name="cartao_deb4"]').value) || 0;
+
+            var total = cartao1 + cartao2 + cartao3 + cartao4;
+            document.querySelector('input[name="cartao_deb_total"]').value = total.toFixed(2);
+        }
+    </script>
+    
+     <form method="post" action="" style="border: 2px solid black; padding: 10px; font-size: large;">
         <h4>RESUMO DE VENDAS  -   <input type="date" name="data" id="data" tabindex="1"></h4>
         <table>
             <tr style="background-color: lightgray;">
@@ -82,26 +114,26 @@
             </tr>
             <tr>
                 <td class="coluna1" style="background-color: lightgray;">DINHEIRO</td>
-                <td><input name="dinheiro1" type="number" tabindex="3"></td>
-                <td><input name="dinheiro2" type="number"></td>
-                <td><input name="dinheiro3" type="number"></td>
-                <td><input name="dinheiro4" type="number"></td>
+                <td><input name="dinheiro1" type="number" tabindex="3" oninput="atualizarDinheiroTotal()"></td>
+                <td><input name="dinheiro2" type="number" oninput="atualizarDinheiroTotal()"></td>
+                <td><input name="dinheiro3" type="number" oninput="atualizarDinheiroTotal()"></td>
+                <td><input name="dinheiro4" type="number" oninput="atualizarDinheiroTotal()"></td>
                 <td><input name="dinheiro_total" type="text" readonly></td>
             </tr>
             <tr>
                 <td class="coluna1" style="background-color: lightgray;">CARTÃO CRED</td>
-                <td><input type="number" name="cartao_cred1"></td>
-                <td><input type="number" name="cartao_cred2"></td>
-                <td><input type="number" name="cartao_cred3"></td>
-                <td><input type="number" name="cartao_cred4"></td>
+                <td><input type="number" name="cartao_cred1" oninput="atualizarCartaoCreditoTotal()"></td>
+                <td><input type="number" name="cartao_cred2" oninput="atualizarCartaoCreditoTotal()"></td>
+                <td><input type="number" name="cartao_cred3" oninput="atualizarCartaoCreditoTotal()"></td>
+                <td><input type="number" name="cartao_cred4"oninput="atualizarCartaoCreditoTotal()"></td>
                 <td><input type="text"  name="cartao_cred_total" readonly></td>
             </tr>
             <tr>
                 <td class="coluna1" style="background-color: lightgray;">CARTÃO DEB</td>
-                <td><input type="number" name="cartao_deb1"></td>
-                <td><input type="number" name="cartao_deb2"></td>
-                <td><input type="number" name="cartao_deb3"></td>
-                <td><input type="number" name="cartao_deb4"></td>
+                <td><input type="number" name="cartao_deb1" oninput="atualizarCartaoDebitoTotal()"></td>
+                <td><input type="number" name="cartao_deb2" oninput="atualizarCartaoDebitoTotal()"></td>
+                <td><input type="number" name="cartao_deb3" oninput="atualizarCartaoDebitoTotal()"></td>
+                <td><input type="number" name="cartao_deb4" oninput="atualizarCartaoDebitoTotal()"></td>
                 <td><input type="text"  name="cartao_deb_total" readonly></td>
             </tr>
             <tr>
